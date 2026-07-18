@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hang Sơn Đoòng - Kì quan thiên nhiên thế giới</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#061b16;
+            color:white;
+            line-height:1.6;
+        }
+
+        :root{
+            --dark:#03120e;
+            --green:#064331;
+            --green2:#0b6b4f;
+            --gold:#f5c542;
+            --white:#ffffff;
+            --text:#d7e6df;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        /* HEADER */
+        header{
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:1000;
+            background:rgba(3,18,14,0.85);
+            backdrop-filter:blur(12px);
+            border-bottom:1px solid rgba(255,255,255,0.12);
+        }
+
+        .navbar{
+            height:76px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            font-size:23px;
+        }
+
+        .logo-icon{
+            width:45px;
+            height:45px;
+            border-radius:15px;
+            background:linear-gradient(135deg,var(--gold),#fff1a8);
+            color:#03120e;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:24px;
+        }
+
+        .logo span{
+            color:var(--gold);
+        }
+
+        nav{
+            display:flex;
+            gap:24px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:15px;
+            position:relative;
+        }
+
+        nav a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-7px;
+            width:0;
+            height:2px;
+            background:var(--gold);
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:var(--gold);
+        }
+
+        nav a:hover::after{
+            width:100%;
+        }
+
+        .menu-btn{
+            display:none;
+            background:rgba(255,255,255,0.12);
+            color:white;
+            border:none;
+            width:45px;
+            height:45px;
+            border-radius:12px;
+            font-size:25px;
+            cursor:pointer;
+        }
+
+        /* HERO - TRANG CHU CO HINH NEN */
+        .hero{
+            min-height:100vh;
+            background-image:
+                linear-gradient(90deg,rgba(3,18,14,0.94),rgba(6,67,49,0.58),rgba(3,18,14,0.18)),
+                url("https://oxalisadventure.com/uploads/2024/06/doline-1-rd__638545368011913524.jpg");
+            background-size:cover;
+            background-position:center center;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            display:flex;
+            align-items:center;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .hero::after{
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:170px;
+            background:linear-gradient(transparent,#061b16);
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:2;
+            max-width:760px;
+            padding:110px 28px 34px 28px;
+            background:rgba(3,18,14,0.30);
+            border-left:5px solid var(--gold);
+            border-radius:24px;
+            backdrop-filter:blur(2px);
+        }
+
+        .label{
+            display:inline-block;
+            padding:10px 18px;
+            border-radius:30px;
+            color:var(--gold);
+            background:rgba(245,197,66,0.12);
+            border:1px solid rgba(245,197,66,0.5);
+            font-weight:bold;
+            margin-bottom:22px;
+        }
+
+        .hero h1{
+            font-size:72px;
+            line-height:1.05;
+            text-transform:uppercase;
+            margin-bottom:22px;
+        }
+
+        .hero h1 span{
+            color:var(--gold);
+        }
+
+        .hero p{
+            font-size:19px;
+            color:#e4f0eb;
+            margin-bottom:32px;
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:14px 28px;
+            border-radius:30px;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn-main{
+            background:var(--gold);
+            color:#03120e;
+        }
+
+        .btn-main:hover{
+            background:white;
+            transform:translateY(-5px);
+        }
+
+        .btn-outline{
+            color:white;
+            border:1px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover{
+            background:white;
+            color:#03120e;
+            transform:translateY(-5px);
+        }
+
+        /* SECTION */
+        section{
+            padding:90px 0;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+
+        .section-title .sub{
+            color:var(--gold);
+            text-transform:uppercase;
+            font-weight:bold;
+            letter-spacing:2px;
+            margin-bottom:10px;
+        }
+
+        .section-title h2{
+            font-size:40px;
+            margin-bottom:12px;
+        }
+
+        .section-title p{
+            color:var(--text);
+            max-width:750px;
+            margin:auto;
+        }
+
+        /* ABOUT */
+        .about-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:45px;
+            align-items:center;
+        }
+
+        .about-img{
+            position:relative;
+        }
+
+        .about-img img{
+            width:100%;
+            height:480px;
+            object-fit:cover;
+            border-radius:30px;
+            box-shadow:0 20px 60px rgba(0,0,0,0.35);
+        }
+
+        .about-img::before{
+            content:"";
+            position:absolute;
+            inset:18px;
+            border:1px solid rgba(245,197,66,0.55);
+            border-radius:22px;
+        }
+
+        .about-text h3{
+            font-size:32px;
+            margin-bottom:18px;
+            color:var(--gold);
+        }
+
+        .about-text p{
+            color:var(--text);
+            margin-bottom:15px;
+            text-align:justify;
+        }
+
+        .info-list{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:15px;
+            margin-top:25px;
+        }
+
+        .info-item{
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            padding:18px;
+            border-radius:18px;
+        }
+
+        .info-item b{
+            display:block;
+            color:var(--gold);
+            margin-bottom:5px;
+        }
+
+        .info-item span{
+            color:#e5f0eb;
+        }
+
+        /* STATS */
+        .stats{
+            background:
+                linear-gradient(135deg,rgba(245,197,66,0.13),rgba(255,255,255,0.03)),
+                #09291f;
+        }
+
+        .stats-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:22px;
+        }
+
+        .stat-card{
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            border-radius:24px;
+            padding:28px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .stat-card:hover{
+            transform:translateY(-8px);
+            border-color:var(--gold);
+        }
+
+        .stat-card h3{
+            font-size:42px;
+            color:var(--gold);
+            margin-bottom:8px;
+        }
+
+        .stat-card p{
+            color:var(--text);
+        }
+
+        /* FEATURES */
+        .features{
+            background:#071f18;
+        }
+
+        .feature-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .feature-card{
+            background:linear-gradient(145deg,rgba(255,255,255,0.11),rgba(255,255,255,0.04));
+            border:1px solid rgba(255,255,255,0.12);
+            padding:32px;
+            border-radius:26px;
+            transition:0.3s;
+            min-height:280px;
+        }
+
+        .feature-card:hover{
+            transform:translateY(-10px);
+            border-color:var(--gold);
+            box-shadow:0 20px 50px rgba(0,0,0,0.28);
+        }
+
+        .feature-icon{
+            width:62px;
+            height:62px;
+            border-radius:20px;
+            background:rgba(245,197,66,0.16);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:30px;
+            margin-bottom:20px;
+        }
+
+        .feature-card h3{
+            color:var(--gold);
+            font-size:22px;
+            margin-bottom:12px;
+        }
+
+        .feature-card p{
+            color:var(--text);
+            text-align:justify;
+        }
+
+        /* GALLERY */
+        .gallery{
+            background:#061b16;
+        }
+
+        .gallery-grid{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:24px;
+        }
+
+        .gallery-item{
+            position:relative;
+            height:310px;
+            overflow:hidden;
+            border-radius:26px;
+            cursor:pointer;
+            border:1px solid rgba(255,255,255,0.14);
+            box-shadow:0 18px 45px rgba(0,0,0,0.28);
+            background:linear-gradient(135deg,rgba(245,197,66,0.12),rgba(255,255,255,0.05));
+            transition:0.35s;
+        }
+
+        .gallery-item:hover{
+            transform:translateY(-8px);
+            border-color:rgba(245,197,66,0.55);
+            box-shadow:0 24px 60px rgba(0,0,0,0.38);
+        }
+
+        .gallery-item img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+            transition:0.55s;
+        }
+
+        .gallery-item:hover img{
+            transform:scale(1.12);
+            filter:brightness(0.82);
+        }
+
+        .gallery-caption{
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:100%;
+            padding:70px 22px 20px;
+            background:linear-gradient(transparent,rgba(0,0,0,0.88));
+        }
+
+        .gallery-caption h3{
+            color:white;
+            font-size:21px;
+            margin-bottom:6px;
+        }
+
+        .gallery-caption p{
+            color:#dbe9e2;
+            font-size:14px;
+        }
+
+        .gallery-badge{
+            position:absolute;
+            top:16px;
+            left:16px;
+            background:rgba(245,197,66,0.95);
+            color:#03120e;
+            padding:7px 13px;
+            border-radius:20px;
+            font-size:13px;
+            font-weight:bold;
+            z-index:2;
+        }
+
+        .gallery-note{
+            max-width:850px;
+            margin:38px auto 0 auto;
+            padding:22px;
+            border-radius:20px;
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            color:var(--text);
+            text-align:center;
+        }
+
+        .gallery-item.no-img{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:20px;
+        }
+
+        .gallery-item.no-img::before{
+            content:"Chưa có hình ảnh";
+            color:var(--gold);
+            font-weight:bold;
+            font-size:20px;
+        }
+
+        /* TIMELINE */
+        .timeline-section{
+            background:#071f18;
+        }
+
+        .history-intro{
+            max-width:900px;
+            margin:0 auto 45px auto;
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            border-left:5px solid var(--gold);
+            border-radius:22px;
+            padding:24px;
+            color:var(--text);
+            text-align:justify;
+        }
+
+        .history-intro b{
+            color:var(--gold);
+        }
+
+        .timeline{
+            max-width:950px;
+            margin:auto;
+            position:relative;
+        }
+
+        .timeline::before{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:50%;
+            width:3px;
+            background:linear-gradient(var(--gold),rgba(245,197,66,0.1));
+            transform:translateX(-50%);
+        }
+
+        .time-item{
+            position:relative;
+            width:50%;
+            padding:24px 36px;
+        }
+
+        .time-item:nth-child(odd){
+            left:0;
+            text-align:right;
+        }
+
+        .time-item:nth-child(even){
+            left:50%;
+        }
+
+        .time-card{
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            border-radius:22px;
+            padding:24px;
+            transition:0.3s;
+        }
+
+        .time-card:hover{
+            transform:translateY(-6px);
+            border-color:rgba(245,197,66,0.45);
+            box-shadow:0 16px 40px rgba(0,0,0,0.25);
+        }
+
+        .time-date{
+            display:inline-block;
+            background:rgba(245,197,66,0.16);
+            color:var(--gold);
+            border:1px solid rgba(245,197,66,0.35);
+            padding:6px 13px;
+            border-radius:20px;
+            font-size:14px;
+            font-weight:bold;
+            margin-bottom:12px;
+        }
+
+        .time-card h3{
+            color:var(--gold);
+            margin-bottom:8px;
+            font-size:22px;
+        }
+
+        .time-card p{
+            color:var(--text);
+            text-align:justify;
+            margin-bottom:10px;
+        }
+
+        .time-card p:last-child{
+            margin-bottom:0;
+        }
+
+        .time-dot{
+            position:absolute;
+            top:40px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:var(--gold);
+            border:5px solid #071f18;
+            box-shadow:0 0 0 5px rgba(245,197,66,0.18);
+        }
+
+        .time-item:nth-child(odd) .time-dot{
+            right:-10px;
+        }
+
+        .time-item:nth-child(even) .time-dot{
+            left:-10px;
+        }
+
+        .history-note{
+            max-width:900px;
+            margin:45px auto 0 auto;
+            background:linear-gradient(135deg,rgba(245,197,66,0.14),rgba(255,255,255,0.05));
+            border:1px solid rgba(245,197,66,0.25);
+            border-radius:24px;
+            padding:26px;
+            text-align:center;
+        }
+
+        .history-note h3{
+            color:var(--gold);
+            margin-bottom:10px;
+            font-size:24px;
+        }
+
+        .history-note p{
+            color:var(--text);
+        }
+
+                /* CONTACT */
+        .contact{
+            background:
+                linear-gradient(rgba(3,18,14,0.9),rgba(3,18,14,0.95)),
+                url("images/sondoong-7.jpg");
+            background-size:cover;
+            background-position:center;
+        }
+
+        .contact-grid{
+            display:grid;
+            grid-template-columns:0.9fr 1.1fr;
+            gap:35px;
+        }
+
+        .contact-info{
+            background:rgba(255,255,255,0.1);
+            border:1px solid rgba(255,255,255,0.14);
+            border-radius:25px;
+            padding:32px;
+            backdrop-filter:blur(12px);
+        }
+
+        .contact-info h3{
+            color:var(--gold);
+            margin-bottom:18px;
+            font-size:26px;
+        }
+
+        .contact-info p{
+            color:#e3f0ea;
+            margin-bottom:13px;
+        }
+
+        form{
+            background:rgba(255,255,255,0.96);
+            padding:32px;
+            border-radius:25px;
+            box-shadow:0 20px 55px rgba(0,0,0,0.35);
+        }
+
+        .form-row{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:15px;
+        }
+
+        form label{
+            display:block;
+            color:#08271e;
+            font-weight:bold;
+            margin-bottom:6px;
+        }
+
+        form input,
+        form select,
+        form textarea{
+            width:100%;
+            padding:13px 14px;
+            margin-bottom:17px;
+            border:1px solid #cfd8d3;
+            border-radius:12px;
+            font-size:15px;
+            outline:none;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus{
+            border-color:var(--green2);
+            box-shadow:0 0 0 4px rgba(11,107,79,0.12);
+        }
+
+        form textarea{
+            height:130px;
+            resize:none;
+        }
+
+        form button{
+            width:100%;
+            border:none;
+            padding:14px;
+            border-radius:30px;
+            background:linear-gradient(135deg,var(--green2),var(--green));
+            color:white;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        form button:hover{
+            background:linear-gradient(135deg,var(--gold),#fff1a8);
+            color:#03120e;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#03120e;
+            text-align:center;
+            padding:35px 0;
+            border-top:1px solid rgba(255,255,255,0.08);
+        }
+
+        footer h3{
+            color:var(--gold);
+            font-size:26px;
+            margin-bottom:8px;
+        }
+
+        footer p{
+            color:#cfe0d8;
+            margin:5px 0;
+        }
+
+        /* LIGHTBOX */
+        .lightbox{
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.88);
+            z-index:99999;
+            display:none;
+            justify-content:center;
+            align-items:center;
+            padding:30px;
+        }
+
+        .lightbox.show{
+            display:flex;
+        }
+
+        .lightbox img{
+            max-width:92%;
+            max-height:86vh;
+            border-radius:24px;
+            box-shadow:0 20px 70px rgba(0,0,0,0.7);
+        }
+
+        .close-lightbox{
+            position:absolute;
+            top:24px;
+            right:32px;
+            font-size:45px;
+            color:white;
+            cursor:pointer;
+        }
+
+        .top-btn{
+            position:fixed;
+            right:24px;
+            bottom:24px;
+            width:52px;
+            height:52px;
+            border-radius:16px;
+            background:var(--gold);
+            color:#03120e;
+            text-decoration:none;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:24px;
+            font-weight:bold;
+            opacity:0;
+            pointer-events:none;
+            transition:0.3s;
+            z-index:999;
+        }
+
+        .top-btn.show{
+            opacity:1;
+            pointer-events:auto;
+        }
+
+        .reveal{
+            opacity:0;
+            transform:translateY(45px);
+            transition:0.8s;
+        }
+
+        .reveal.active{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        @media(max-width:950px){
+            nav{
+                position:absolute;
+                top:76px;
+                right:5%;
+                width:260px;
+                display:none;
+                flex-direction:column;
+                background:rgba(3,18,14,0.96);
+                border:1px solid rgba(255,255,255,0.12);
+                border-radius:18px;
+                padding:15px;
+            }
+
+            nav.active{
+                display:flex;
+            }
+
+            nav a{
+                padding:10px;
+            }
+
+            .menu-btn{
+                display:block;
+            }
+
+            .hero{
+                background-attachment:scroll;
+            }
+
+            .hero h1{
+                font-size:50px;
+            }
+
+            .about-grid,
+            .contact-grid{
+                grid-template-columns:1fr;
+            }
+
+            .stats-grid,
+            .feature-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .gallery-grid{
+                grid-template-columns:1fr 1fr;
+                grid-template-rows:auto;
+            }
+
+            .gallery-item{
+                height:260px;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4){
+                grid-row:span 1;
+                grid-column:span 1;
+            }
+
+            .timeline::before{
+                left:12px;
+            }
+
+            .time-item{
+                width:100%;
+                left:0 !important;
+                text-align:left !important;
+                padding-left:45px;
+                padding-right:0;
+            }
+
+            .time-item .time-dot{
+                left:2px !important;
+            }
+        }
+
+        @media(max-width:600px){
+            .hero{
+                min-height:auto;
+                padding:130px 0 90px;
+            }
+
+            .hero h1{
+                font-size:38px;
+            }
+
+            .hero p{
+                font-size:16px;
+            }
+
+            .section-title h2{
+                font-size:30px;
+            }
+
+            .stats-grid,
+            .feature-grid,
+            .gallery-grid,
+            .info-list,
+            .form-row{
+                grid-template-columns:1fr;
+            }
+
+            .about-img img{
+                height:360px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#trangchu" class="logo">
+                <div class="logo-icon">⛰</div>
+                <div>Sơn <span>Đoòng</span></div>
+            </a>
+
+            <nav id="navMenu">
+                <a href="#trangchu">Trang chủ</a>
+                <a href="#gioithieu">Giới thiệu</a>
+                <a href="#dacdiem">Đặc điểm</a>
+                <a href="#hinhanh">Hình ảnh</a>
+                <a href="#lichsu">Lịch sử</a>
+                <a href="#lienhe">Liên hệ</a>
+            </nav>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <section class="hero" id="trangchu">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="label">Kì quan thiên nhiên của Việt Nam</div>
+
+                <h1>Khám phá <span>Hang Sơn Đoòng</span></h1>
+
+                <p>
+                    Hang Sơn Đoòng là một trong những hang động nổi tiếng nhất thế giới,
+                    mang vẻ đẹp hoang sơ, kỳ vĩ và là niềm tự hào của thiên nhiên Việt Nam.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#gioithieu" class="btn btn-main">Khám phá ngay</a>
+                    <a href="#hinhanh" class="btn btn-outline">Xem hình ảnh</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="gioithieu">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="sub">Giới thiệu</div>
+                <h2>Vẻ đẹp hùng vĩ trong lòng đất</h2>
+                <p>Website giới thiệu tổng quan về Hang Sơn Đoòng, vị trí, đặc điểm, hình ảnh và giá trị du lịch.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-img reveal">
+                    <img src="https://lp-cms-production.imgix.net/features/2019/05/Hang-En-Exit-Ryan-Deboodt-d0321ab17c46.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=23&dpr=4" alt="Hang Sơn Đoòng">
+                </div>
+
+                <div class="about-text reveal">
+                    <h3>Hang Sơn Đoòng có gì đặc biệt?</h3>
+
+                    <p>
+                        Hang Sơn Đoòng là hang động lớn nhất hành tinh và cũng là hang động hùng vĩ nhất tại Việt Nam. 
+                        Hang Sơn Đoòng nằm trong vùng lõi Vườn Quốc gia Phong Nha-Kẻ Bàng, thuộc xã Thượng Trạch, tỉnh Quảng Trị 
+                        (trước đây là tỉnh Quảng Bình). Hang động Sơn Đoòng được Hồ Khanh - một thợ rừng người Phong Nha phát hiện ra 
+                        cửa hang vào năm 1990 và đến năm 2009 thì được nhóm thám hiểm hang động Anh-Việt (The British Vietnam Caving Expedition Team)
+                        do ông Howard Limbert dẫn đầu vào thám hiểm, khảo sát và đo vẽ. Hang Sơn Đoòng được nhóm thám hiểm cùng với tạp chí National Geographic
+                        công bố là hang động đá vôi tự nhiên lớn nhất thế giới năm 2009. Năm 2013, Hang Sơn Đoòng được tổ chức kỷ lục thế giới Guinness ghi nhận là hang động tự nhiên lớn nhất thế giới.
+                    </p>
+
+                    <p>
+                        Bên trong hang có sông ngầm, các khối thạch nhũ đồ sộ, hố sụt tự nhiên
+                        và những mảng xanh được hình thành nhờ ánh sáng mặt trời chiếu qua miệng hang.
+                    </p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <b>Vị trí</b>
+                            <span>Quảng Bình, Việt Nam</span>
+                        </div>
+
+                        <div class="info-item">
+                            <b>Loại hình</b>
+                            <span>Du lịch khám phá</span>
+                        </div>
+
+                        <div class="info-item">
+                            <b>Giá trị</b>
+                            <span>Thiên nhiên - du lịch</span>
+                        </div>
+
+                        <div class="info-item">
+                            <b>Phong cách</b>
+                            <span>Hoang sơ, kỳ vĩ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <h3 class="counter" data-target="4">0</h3>
+                    <p>Giá trị nổi bật</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="6">0</h3>
+                    <p>Khu vực nội dung</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Trải nghiệm thiên nhiên</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="1">0</h3>
+                    <p>Kì quan đáng tự hào</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="dacdiem">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="sub">Đặc điểm</div>
+                <h2>Điểm nổi bật của Hang Sơn Đoòng</h2>
+                <p>Các yếu tố tạo nên vẻ đẹp và giá trị đặc biệt của Hang Sơn Đoòng.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Hệ sinh thái độc đáo</h3>
+                    <p>Bên trong hang có những khu vực nhận được ánh sáng tự nhiên, giúp cây xanh phát triển.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">⛰</div>
+                    <h3>Không gian hùng vĩ</h3>
+                    <p>Vòm hang rộng, vách đá cao và các khối thạch nhũ lớn tạo nên cảnh quan kỳ vĩ.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">💧</div>
+                    <h3>Sông ngầm bí ẩn</h3>
+                    <p>Dòng nước chảy trong lòng hang làm tăng vẻ huyền bí và giá trị tự nhiên.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📍</div>
+                    <h3>Vị trí đặc biệt</h3>
+                    <p>Hang thuộc khu vực Phong Nha - Kẻ Bàng, nơi nổi tiếng với hệ thống hang động đẹp.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">📸</div>
+                    <h3>Giá trị du lịch</h3>
+                    <p>Là điểm đến hấp dẫn cho người yêu thiên nhiên, thích khám phá và trải nghiệm.</p>
+                </div>
+
+                <div class="feature-card reveal">
+                    <div class="feature-icon">🌏</div>
+                    <h3>Quảng bá Việt Nam</h3>
+                    <p>Góp phần đưa hình ảnh thiên nhiên Việt Nam đến gần hơn với bạn bè quốc tế.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="hinhanh">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="sub">Thư viện</div>
+                <h2>Thư viện hình ảnh Hang Sơn Đoòng</h2>
+                <p>
+                    Những hình ảnh minh họa giúp người xem cảm nhận rõ hơn vẻ đẹp hùng vĩ,
+                    hoang sơ và bí ẩn của Hang Sơn Đoòng.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Cửa hang</span>
+                    <img src="https://oxalisadventure.com/uploads/2024/06/doline-1-rd__638545368011913524.jpg" alt="Cửa hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Cửa hang hùng vĩ</h3>
+                        <p>Không gian rộng lớn, ánh sáng tự nhiên và cảnh quan kỳ vĩ.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Thạch nhũ</span>
+                    <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2023/9/4/1237194/4-69.jpg" alt="Thạch nhũ Hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Thạch nhũ độc đáo</h3>
+                        <p>Các khối thạch nhũ được hình thành tự nhiên qua thời gian dài.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Rừng trong hang</span>
+                    <img src="https://oxalisadventure.com/uploads/2024/06/doline-2-from-above__638545368028025415.jpg" alt="Rừng trong Hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Hệ sinh thái đặc biệt</h3>
+                        <p>Cây xanh phát triển nhờ ánh sáng chiếu qua các hố sụt tự nhiên.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Sông ngầm</span>
+                    <img src="https://img6.thuthuatphanmem.vn/uploads/2023/03/31/anh-hang-dong-son-doong-chat-luong-cao_024020540.jpg" alt="Sông ngầm trong Hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Dòng sông ngầm bí ẩn</h3>
+                        <p>Dòng nước trong hang góp phần tạo nên vẻ đẹp huyền bí của Sơn Đoòng.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Cảnh quan</span>
+                    <img src="https://kenh14cdn.com/203336854389633024/2025/4/23/images810440anhtaochi1-1745371233564878688029-1745376282176-17453762823071513032107.jpg" alt="Cảnh quan Hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Cảnh quan kỳ vĩ</h3>
+                        <p>Không gian trong hang tạo cảm giác như một thế giới khác dưới lòng đất.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <span class="gallery-badge">Khám phá</span>
+                    <img src="https://kenhhomestay.com/wp-content/uploads/2023/02/Hang-Son-Doong-30.jpg" alt="Hành trình khám phá Hang Sơn Đoòng"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                    <div class="gallery-caption">
+                        <h3>Hành trình khám phá</h3>
+                        <p>Điểm đến dành cho những người yêu thiên nhiên và thích trải nghiệm.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="gallery-note reveal">
+                <p>
+                    Đây là những hình ảnh nổi bật của hang sơn đoòng
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section" id="lichsu">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="sub">Lịch sử</div>
+                <h2>Các mốc thời gian phát hiện và khảo sát Hang Sơn Đoòng</h2>
+                <p>
+                    Những cột mốc quan trọng giúp người xem hiểu rõ hơn về quá trình phát hiện,
+                    khảo sát, công bố và ghi nhận Hang Sơn Đoòng trên bản đồ hang động thế giới.
+                </p>
+            </div>
+
+            <div class="history-intro reveal">
+                <p>
+                    <b>Hang Sơn Đoòng</b> không chỉ nổi bật bởi vẻ đẹp hùng vĩ mà còn có một hành trình
+                    phát hiện và khảo sát rất đặc biệt. Từ lần phát hiện đầu tiên của ông Hồ Khanh
+                    trong rừng đến các chuyến thám hiểm của đoàn chuyên gia Anh - Việt, Sơn Đoòng
+                    dần được thế giới biết đến như một trong những kỳ quan thiên nhiên độc đáo nhất.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Đầu tháng 12 năm 1990</div>
+                        <h3>Phát hiện cửa hang</h3>
+                        <p>
+                            Ông Hồ Khanh trong một lần đi rừng đã tình cờ phát hiện ra cửa hang.
+                            Đây chính là cửa hang sau này được gọi là Hang Sơn Đoòng. Phát hiện này
+                            là mốc khởi đầu quan trọng trong hành trình đưa Sơn Đoòng đến với thế giới.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Ngày 07 tháng 04 năm 2009</div>
+                        <h3>Đoàn thám hiểm Anh - Việt khảo sát hang</h3>
+                        <p>
+                            Ông Hồ Khanh dẫn đoàn thám hiểm Hang động Anh - Việt do ông Howard Limbert
+                            đứng đầu vào khảo sát và đo vẽ hang. Ông Peter MacNab là người đầu tiên
+                            bước chân vào bên trong Hang Sơn Đoòng trong chuyến khảo sát này.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Ngày 14 tháng 04 năm 2009</div>
+                        <h3>Đặt tên và công bố hang động lớn nhất thế giới</h3>
+                        <p>
+                            Hang được đặt tên là Hang Sơn Đoòng và được công bố là hang động tự nhiên
+                            lớn nhất thế giới. Tạp chí National Geographic cũng công bố Sơn Đoòng là
+                            hang động tự nhiên lớn nhất thế giới, giúp địa danh này được biết đến rộng rãi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Ngày 17 tháng 03 năm 2010</div>
+                        <h3>Hoàn thành khảo sát và đo vẽ toàn bộ hang</h3>
+                        <p>
+                            Đoàn thám hiểm leo lên bức tường Việt Nam để ra khỏi hang, hoàn thành
+                            công tác khảo sát và đo vẽ toàn bộ Hang Sơn Đoòng. Kết quả cho thấy hang
+                            có chiều dài gần 9km và thể tích khoảng 38,5 triệu m³.
+                        </p>
+                        <p>
+                            Sau đó, National Geographic TV tiếp tục công bố Sơn Đoòng là hang động tự nhiên
+                            lớn nhất thế giới.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Năm 2013</div>
+                        <h3>Được Guinness ghi nhận</h3>
+                        <p>
+                            Hang Sơn Đoòng được Tổ chức Kỷ lục Thế giới Guinness ghi nhận là hang động
+                            tự nhiên lớn nhất thế giới. Đây là dấu mốc quan trọng, khẳng định giá trị
+                            đặc biệt của Sơn Đoòng trên phạm vi toàn cầu.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="time-item reveal">
+                    <div class="time-dot"></div>
+                    <div class="time-card">
+                        <div class="time-date">Ngày 31 tháng 03 năm 2019</div>
+                        <h3>Thám hiểm dòng sông ngầm trong hang</h3>
+                        <p>
+                            Ông Howard Limbert cùng các chuyên gia lặn hang động nổi tiếng thế giới
+                            như Martin Holroyd, Rick Stanton, Jason Mallinson và Chris Jewell đã thực hiện
+                            chuyến thám hiểm lặn xuống dòng sông ngầm bên trong Hang Sơn Đoòng.
+                        </p>
+                        <p>
+                            Sau gần một tuần khảo sát, đoàn phát hiện một lối ngầm ở độ sâu khoảng 90m.
+                            Tuy nhiên, do chưa có thiết bị phù hợp để lặn ở độ sâu lớn hơn nên đoàn đã dừng lại.
+                            Nếu đoạn hang ngầm này nối với Hang Thung, thể tích Hang Sơn Đoòng có thể tăng thêm
+                            khoảng 1,6 triệu m³. Các cuộc thám hiểm tiếp theo sẽ tiếp tục mở ra thêm nhiều giá trị
+                            nghiên cứu mới cho Hang Sơn Đoòng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-note reveal">
+                <h3>Ý nghĩa của các mốc lịch sử</h3>
+                <p>
+                    Các mốc thời gian trên cho thấy Hang Sơn Đoòng không chỉ là một thắng cảnh đẹp,
+                    mà còn là kết quả của quá trình phát hiện, khảo sát, đo vẽ và nghiên cứu nghiêm túc.
+                    Nhờ đó, Sơn Đoòng trở thành biểu tượng nổi bật của du lịch khám phá Việt Nam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="lienhe">
+        <div class="container">
+            <div class="section-title reveal">
+                <div class="sub">Liên hệ</div>
+                <h2>Góp ý cho website</h2>
+                <p>Form liên hệ giúp website có tính tương tác và hoàn chỉnh hơn.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Thông tin đề tài</h3>
+                    <p><b>Chủ đề:</b> Thiết kế website giới thiệu kì quan thế giới - Hang Sơn Đoòng.</p>
+                    <p><b>Mục tiêu:</b> Giới thiệu vị trí, vẻ đẹp, đặc điểm, lịch sử và kinh nghiệm tham quan.</p>
+                    <p><b>Công nghệ:</b> HTML, CSS, JavaScript.</p>
+                    <p><b>Đối tượng:</b> Học sinh, sinh viên, khách du lịch và người yêu thiên nhiên.</p>
+                </div>
+
+                <form id="contactForm" class="reveal">
+                    <div class="form-row">
+                        <div>
+                            <label>Họ và tên</label>
+                            <input type="text" placeholder="Nhập họ tên">
+                        </div>
+
+                        <div>
+                            <label>Email</label>
+                            <input type="email" placeholder="Nhập email">
+                        </div>
+                    </div>
+
+                    <label>Chủ đề góp ý</label>
+                    <select>
+                        <option>Góp ý giao diện</option>
+                        <option>Góp ý nội dung</option>
+                        <option>Góp ý hình ảnh</option>
+                        <option>Khác</option>
+                    </select>
+
+                    <label>Nội dung</label>
+                    <textarea placeholder="Nhập nội dung góp ý..."></textarea>
+
+                    <button type="submit">Gửi góp ý</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Hang Sơn Đoòng</h3>
+        <p>Website giới thiệu kì quan thiên nhiên thế giới</p>
+        <p>Nhóm thực hiện: Sinh viên năm nhất</p>
+        <p>© 2026 - Bài tập thiết kế website</p>
+    </footer>
+
+    <a href="#trangchu" class="top-btn" id="topBtn">↑</a>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="closeLightbox">×</span>
+        <img src="" alt="Ảnh phóng to" id="lightboxImg">
+    </div>
+
+    <script>
+        var menuBtn = document.getElementById("menuBtn");
+        var navMenu = document.getElementById("navMenu");
+
+        menuBtn.onclick = function(){
+            navMenu.classList.toggle("active");
+        };
+
+        var navLinks = document.querySelectorAll("nav a");
+
+        for(var i = 0; i < navLinks.length; i++){
+            navLinks[i].onclick = function(){
+                navMenu.classList.remove("active");
+            };
+        }
+
+        var topBtn = document.getElementById("topBtn");
+
+        window.onscroll = function(){
+            if(document.documentElement.scrollTop > 400){
+                topBtn.classList.add("show");
+            }else{
+                topBtn.classList.remove("show");
+            }
+
+            revealElements();
+            runCounter();
+        };
+
+        function revealElements(){
+            var reveals = document.querySelectorAll(".reveal");
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+
+                if(elementTop < windowHeight - 100){
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        revealElements();
+
+        var counted = false;
+
+        function runCounter(){
+            if(counted == true){
+                return;
+            }
+
+            var stats = document.querySelector(".stats-grid");
+
+            if(stats.getBoundingClientRect().top < window.innerHeight - 100){
+                counted = true;
+
+                var counters = document.querySelectorAll(".counter");
+
+                for(var i = 0; i < counters.length; i++){
+                    animateCounter(counters[i]);
+                }
+            }
+        }
+
+        function animateCounter(counter){
+            var target = parseInt(counter.getAttribute("data-target"));
+            var current = 0;
+            var step = Math.ceil(target / 50);
+
+            var timer = setInterval(function(){
+                current += step;
+
+                if(current >= target){
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                if(target == 100){
+                    counter.innerHTML = current + "%";
+                }else{
+                    counter.innerHTML = current + "+";
+                }
+            }, 30);
+        }
+
+        var galleryImages = document.querySelectorAll(".gallery-item img");
+        var lightbox = document.getElementById("lightbox");
+        var lightboxImg = document.getElementById("lightboxImg");
+        var closeLightbox = document.getElementById("closeLightbox");
+
+        for(var i = 0; i < galleryImages.length; i++){
+            galleryImages[i].onclick = function(){
+                lightbox.classList.add("show");
+                lightboxImg.src = this.src;
+            };
+        }
+
+        closeLightbox.onclick = function(){
+            lightbox.classList.remove("show");
+        };
+
+        lightbox.onclick = function(e){
+            if(e.target == lightbox){
+                lightbox.classList.remove("show");
+            }
+        };
+
+        var form = document.getElementById("contactForm");
+
+        form.onsubmit = function(e){
+            e.preventDefault();
+            alert("Cảm ơn bạn đã gửi góp ý!");
+            form.reset();
+        };
+    </script>
+
+</body>
+</html>
